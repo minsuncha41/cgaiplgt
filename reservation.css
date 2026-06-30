@@ -1,0 +1,353 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(180deg, #f1f8ff 0%, #ffffff 100%);
+    color: #1c1c1c;
+    min-height: 100vh;
+}
+
+a,
+button {
+    font-family: inherit;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 6px 20px rgba(34, 60, 80, 0.08);
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.container {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.5rem !important;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #1f67d6 0%, #58b4ff 100%);
+    color: #ffffff;
+    padding: 0.95rem 1.4rem;
+    box-shadow: 0 12px 30px rgba(31, 103, 214, 0.18);
+}
+
+.btn-secondary {
+    background: #f3f7ff;
+    color: #0f3d91;
+    padding: 0.85rem 1.25rem;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: #ffffff;
+    padding: 0.75rem 1rem;
+}
+
+.btn-small {
+    padding: 0.65rem 0.95rem;
+    font-size: 0.95rem;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+.hero {
+    padding: 4rem 0 2rem;
+}
+
+.hero-subtle {
+    background: #ffffff;
+    border-radius: 28px;
+    margin: 1.5rem auto 0;
+    box-shadow: 0 26px 60px rgba(51, 79, 108, 0.08);
+}
+
+.hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 2.5rem 2rem;
+}
+
+.eyebrow {
+    font-size: 0.95rem;
+    color: #2563eb;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 2.4vw, 3rem);
+    line-height: 1.05;
+    margin: 0;
+}
+
+.hero-lead {
+    margin-top: 1rem;
+    max-width: 42rem;
+    color: #435467;
+}
+
+.dashboard-section {
+    padding: 2rem 0 4rem;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 1.5rem;
+}
+
+.dashboard-aside {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.panel {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 1.75rem;
+    box-shadow: 0 18px 40px rgba(24, 50, 93, 0.08);
+}
+
+.panel h2 {
+    margin-top: 0;
+    color: #0f3d91;
+    font-size: 1.25rem;
+}
+
+.panel-card {
+    min-height: 140px;
+}
+
+.session-info p,
+.notice-card,
+.reservation-card div {
+    margin: 0.75rem 0;
+    color: #334155;
+}
+
+.session-info p strong {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.notice-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.notice-card {
+    background: #f8fbff;
+    border-radius: 18px;
+    padding: 1rem;
+    border: 1px solid #e2edff;
+}
+
+.notice-card strong {
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    border: 1px solid #d7e2f3;
+    border-radius: 16px;
+    padding: 0.95rem 1rem;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #4f7ef7;
+    box-shadow: 0 0 0 4px rgba(79, 126, 247, 0.12);
+}
+
+.form-group.form-full {
+    grid-column: 1 / -1;
+}
+
+.reservation-card {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: 20px;
+    background: #f8fbff;
+    border: 1px solid #dfe7f8;
+}
+
+.reservation-card div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+
+.reservation-card strong {
+    color: #475569;
+}
+
+.reservation-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem 1rem;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.reservation-row:last-child {
+    border-bottom: none;
+}
+
+.reservation-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.reservation-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+.reservation-actions {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.text-muted {
+    color: #64748b;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.footer {
+    background: transparent;
+    padding: 2rem 0 3rem;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #475569;
+    gap: 1rem;
+}
+
+.footer-inner a {
+    color: #0f3d91;
+    text-decoration: none;
+}
+
+@media (max-width: 960px) {
+
+    .dashboard-grid,
+    .hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero-inner {
+        padding: 1.75rem;
+    }
+
+    .panel {
+        padding: 1.25rem;
+    }
+
+    .reservation-card {
+        grid-template-columns: 1fr;
+    }
+
+    .reservation-row {
+        grid-template-columns: 1fr;
+    }
+
+    .reservation-actions {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+}

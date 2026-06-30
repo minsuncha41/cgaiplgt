@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>치주질환 | SmileDental</title>
+    <link rel="stylesheet" href="index.css" />
+    <style>
+        body {
+            background: #f8fcf8;
+        }
+
+        .page-hero {
+            padding: 5rem 0 3rem;
+            background: linear-gradient(135deg, #f2fbf1 0%, #ffffff 100%);
+            margin-top: 70px;
+        }
+
+        .page-hero .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .page-hero img,
+        .page-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            object-fit: cover;
+            display: block;
+            box-shadow: 0 12px 32px rgba(39, 102, 57, 0.15);
+        }
+
+        .page-section {
+            padding: 3rem 0 4rem;
+        }
+
+        .page-card {
+            background: #fff;
+            border: 1px solid #e4f5e5;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(39, 102, 57, 0.06);
+        }
+
+        .page-card h2 {
+            color: #2e7d32;
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-card ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 1rem;
+        }
+
+        .page-card li {
+            padding-left: 2rem;
+            position: relative;
+            color: #4b5563;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .page-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #2e7d32;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-box {
+            background: #f5fdf5;
+            border: 1px solid #dcf3de;
+            border-radius: 16px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: var(--transition-base);
+            cursor: pointer;
+        }
+
+        .feature-box:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: #2e7d32;
+            background: #f0faf1;
+        }
+
+        .feature-box h3 {
+            color: #2e7d32;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-box p {
+            color: #6b7280;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .pill {
+            display: inline-block;
+            background: #e7f8e9;
+            color: #2e7d32;
+            border-radius: 999px;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .cta-banner {
+            background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+            color: white;
+            border-radius: 24px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cta-banner h2 {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .cta-banner p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                overflow: hidden;
+                position: absolute;
+                top: 62px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.8rem;
+                padding: 1rem 1.25rem 1.25rem;
+                background: #fff;
+                border-bottom: 1px solid #eee;
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+                z-index: 100;
+                max-height: 0;
+                transition: max-height 0.25s ease;
+            }
+
+            .nav-menu.active {
+                display: flex;
+                max-height: 320px;
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 0.7rem 0;
+            }
+
+            .nav-menu .btn-login {
+                text-align: center;
+            }
+
+            .page-hero .hero-grid,
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-hero {
+                padding: 3rem 0 2rem;
+            }
+
+            .page-card {
+                padding: 1.5rem;
+            }
+
+            .cta-banner {
+                padding: 2rem 1.5rem;
+            }
+
+            .page-hero {
+                margin-top: 70px;
+                padding: 2rem 0 1rem;
+            }
+
+            .page-card h2 {
+                font-size: 1.3rem;
+            }
+
+            .cta-banner h2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (min-width:900px) {
+            .nav-menu[hidden] {
+                display: flex !important;
+            }
+
+            .hamburger {
+                display: none;
+            }
+        }
+
+        /* 진료안내 부모 위치 고정 */
+        .nav-menu .dropdown {
+            position: relative;
+        }
+
+        /* 서브메뉴 상자 디자인 및 '슬라이드 애니메이션' 준비 */
+        .nav-menu .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+            border: 1px solid #eee;
+            border-radius: 8px;
+            list-style: none;
+            padding: 6px 0;
+            margin: 4px 0 0 0;
+            width: 140px;
+            z-index: 100;
+
+            /* 처음에는 높이 0, 투명도 0으로 완전히 숨김 */
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            visibility: hidden;
+            /* 마우스 올렸을 때 부드럽게 늘어나도록 transition 설정 */
+            transition: max-height 0.3s ease, opacity 0.25s ease, visibility 0.25s;
+        }
+
+        /* 서브메뉴 내부 링크 기본 커스텀 */
+        .nav-menu .dropdown-menu a {
+            display: block;
+            padding: 10px 14px;
+            font-size: 0.95rem;
+            border-radius: 0;
+            text-align: center;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        /* 서브메뉴 각 항목에 마우스 올리면 파랗게 변하는 효과 */
+        .nav-menu .dropdown-menu a:hover {
+            background: #f4f9ff;
+            color: var(--primary);
+        }
+
+        /* [핵심] 마우스를 올렸을 때(hover) 높이가 250px로 슥 늘어나며 슬라이드 다운됨 */
+        @media (min-width: 900px) {
+            .nav-menu .dropdown:hover .dropdown-menu {
+                max-height: 250px;
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .nav-menu {
+                display: none;
+                overflow: hidden;
+                position: absolute;
+                top: 62px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.8rem;
+                padding: 1rem 1.25rem 1.25rem;
+                background: #fff;
+                border-bottom: 1px solid #eee;
+                box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+                z-index: 100;
+                max-height: 0;
+                transition: max-height 0.25s ease;
+            }
+
+            .nav-menu.active {
+                display: flex;
+                max-height: 480px;
+                /* 서브메뉴 공간 확보를 위해 조절 */
+            }
+
+            /* 모바일 환경에서의 드롭다운 서브메뉴 스타일 구조 동기화 */
+            .nav-menu .dropdown-menu {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                border: none;
+                width: 100%;
+                padding: 0;
+                margin: 4px 0;
+                background: #fafbfc;
+                max-height: none;
+                opacity: 1;
+                visibility: visible;
+                display: block;
+            }
+
+            .nav-menu .dropdown-menu a {
+                text-align: left;
+                padding: 8px 24px;
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 0.7rem 0;
+            }
+
+            .nav-menu .btn-login {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar" role="navigation" aria-label="주요">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="logo"><span class="logo-text">SmileDental</span></a>
+                    <button class="hamburger" id="hamburger" aria-controls="navMenu" aria-expanded="false"
+                        aria-label="메뉴 열기" type="button"><span></span><span></span><span></span></button>
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html#home">홈</a></li>
+                        <li><a href="index.html#about">병원소개</a></li>
+                        <li class="dropdown">
+                            <a href="index.html#services">진료안내</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="orthodontics.html">교정치료</a></li>
+                                <li><a href="prosthetics.html">심미보철</a></li>
+                                <li><a href="periodontal.html">치주질환</a></li>
+                                <li><a href="wisdom-tooth.html">사랑니</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#notice">공지사항</a></li>
+                        <li><a href="login.html" class="btn-login">예약/로그인</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="container hero-grid">
+                <div>
+                    <span class="pill">잇몸 건강 관리</span>
+                    <h1 class="hero-title">치주질환은 조기 발견과 치료가 가장 중요합니다</h1>
+                    <p class="hero-subtitle">출혈, 붓기, 치아 흔들림 같은 초기 증상을 놓치지 않도록 정밀 검사와 단계별 치료를 진행합니다.</p>
+                    <a href="login.html" class="btn btn-primary">상담 예약하기</a>
+                </div>
+                <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=500&fit=crop"
+                    alt="치주진료 이미지" loading="lazy" />
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="page-card">
+                    <h2>주의가 필요한 증상</h2>
+                    <div class="feature-grid">
+                        <div class="feature-box">
+                            <h3>잇몸 출혈</h3>
+                            <p>칫솔질이나 음식 섭취 시 잇몸에서 피가 나는 경우</p>
+                        </div>
+                        <div class="feature-box">
+                            <h3>잇몸 붓기</h3>
+                            <p>잇몸이 붉게 부어오르거나 통증이 있는 경우</p>
+                        </div>
+                        <div class="feature-box">
+                            <h3>치아 흔들림</h3>
+                            <p>치아가 흔들리거나 씹을 때 불편감이 있는 경우</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="page-card">
+                    <h2>치료 접근</h2>
+                    <ul>
+                        <li>정밀 진단과 치주 상태 평가</li>
+                        <li>스케일링 및 소독 치료</li>
+                        <li>필요 시 치근활택술 및 유지 관리</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="cta-banner">
+                    <h2>치주질환 상담을 시작해보세요</h2>
+                    <p>초기 진단과 예방 관리가 중요한 만큼, 지금 바로 확인해보세요.</p>
+                    <a href="login.html" class="btn btn-secondary" style="background:white;color:#2e7d32;">예약하기</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content" style="display:flex;gap:24px;flex-wrap:wrap;">
+                <div class="footer-section" style="flex:1;min-width:200px;">
+                    <h4>스마일 치과</h4>
+                    <p>서울시 중구 명동길 123</p>
+                    <p>☎ 02-1234-5678</p>
+                    <p>📧 info@smiledental.com</p>
+                </div>
+                <div class="footer-section" style="flex:1;min-width:200px;">
+                    <h4>진료시간</h4>
+                    <p>월-금: 09:00 - 19:00</p>
+                    <p>토: 09:00 - 14:00</p>
+                    <p>일요일·공휴일: 휴무</p>
+                </div>
+                <div class="footer-section" style="flex:1;min-width:200px;">
+                    <h4>빠른 링크</h4>
+                    <ul style="padding-left:0;list-style:none;margin:0;display:flex;flex-direction:column;gap:6px;">
+                        <li><a href="index.html#about">병원소개</a></li>
+                        <li><a href="index.html#services">진료안내</a></li>
+                        <li><a href="login.html">예약하기</a></li>
+                        <li><a href="index.html#notice">공지사항</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom" style="margin-top:16px;text-align:center;">
+                <p>&copy; 2024 SmileDental. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        if (hamburger && navMenu) {
+            const toggleMenu = (shouldOpen) => {
+                const open = typeof shouldOpen === 'boolean' ? shouldOpen : !navMenu.classList.contains('active');
+                navMenu.classList.toggle('active', open);
+                hamburger.classList.toggle('active', open);
+                hamburger.setAttribute('aria-expanded', String(open));
+                hamburger.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+                if (hamburger.setAttribute(open)) {
+                    if (open) {
+                        navMenu.removeAttribute("hidden");
+                    } else {
+                        navMenu.setAttribute("hidden", "");
+                    }
+                }
+            };
+
+            hamburger.addEventListener('click', () => toggleMenu());
+            navMenu.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', () => toggleMenu(false));
+            });
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && !navMenu.hasAttribute('hidden')) {
+                    toggleMenu(false);
+                    hamburger.focus();
+                }
+            });
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768) {
+                    toggleMenu(false);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

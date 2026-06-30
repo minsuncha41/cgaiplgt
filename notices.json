@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "title": "2024년 신년 특별 진료 이벤트",
+    "date": "2024-01-15",
+    "content": "새해를 맞이하여 특별한 이벤트를 준비했습니다. 첫 진료 30% 할인!",
+    "category": "이벤트",
+    "image": "https://images.unsplash.com/photo-1576091160550-112173f7f869?w=400&h=300&fit=crop"
+  },
+  {
+    "id": 2,
+    "title": "치아 임플란트 최신 기술 도입",
+    "date": "2024-01-10",
+    "content": "세계 최고 수준의 디지털 임플란트 시스템이 도입되었습니다. 더욱 정확하고 빠른 시술이 가능합니다.",
+    "category": "소식",
+    "image": "https://images.unsplash.com/photo-1631217314830-b3cde1fdc8b5?w=400&h=300&fit=crop"
+  },
+  {
+    "id": 3,
+    "title": "겨울철 구강 건강 관리 가이드",
+    "date": "2024-01-05",
+    "content": "겨울철에 주의해야 할 구강 건강 관리법을 알려드립니다. 자세한 내용은 공지사항을 참고하세요.",
+    "category": "정보",
+    "image": "https://images.unsplash.com/photo-1606811841689-23db3c512ee1?w=400&h=300&fit=crop"
+  },
+  {
+    "id": 4,
+    "title": "스마일 치과 의료진 소개",
+    "date": "2023-12-28",
+    "content": "저희 스마일 치과의 경험 많은 의료진들을 소개합니다. 국제 자격증을 보유한 전문가들이 여러분을 진료합니다.",
+    "category": "소식",
+    "image": "https://images.unsplash.com/photo-1576091160550-112173f7f869?w=400&h=300&fit=crop"
+  },
+  {
+    "id": 5,
+    "title": "휴무일 안내 - 설날 연휴",
+    "date": "2023-12-20",
+    "content": "설날 연휴 동안 병원이 휴무입니다. 응급의료기관 연락처를 참고해주세요.",
+    "category": "공지",
+    "image": "https://images.unsplash.com/photo-1530267387789-4c1017266635?w=400&h=300&fit=crop"
+  },
+  {
+    "id": 6,
+    "title": "교정 치료 무료 상담 진행중",
+    "date": "2023-12-15",
+    "content": "12월 말까지 교정 치료에 대한 무료 상담을 진행하고 있습니다. 지금 예약하세요!",
+    "category": "이벤트",
+    "image": "https://images.unsplash.com/photo-1606811841689-23db3c512ee1?w=400&h=300&fit=crop"
+  },
+  {
+    "id": 7,
+    "title": "정기검진의 중요성",
+    "date": "2023-12-10",
+    "content": "6개월마다 한 번씩 정기검진을 받으시는 것이 좋습니다. 충치와 잇몸질환을 조기에 발견할 수 있습니다.",
+    "category": "정보",
+    "image": "https://images.unsplash.com/photo-1576091160550-112173f7f869?w=400&h=300&fit=crop"
+  },
+  {
+    "id": 8,
+    "title": "스마일 치과 SNS 팔로우 이벤트",
+    "date": "2023-12-05",
+    "content": "인스타그램을 팔로우하고 다양한 정보와 이벤트를 받아보세요. 매주 선착순 경품 지급!",
+    "category": "이벤트",
+    "image": "https://images.unsplash.com/photo-1530267387789-4c1017266635?w=400&h=300&fit=crop"
+  }
+]

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="650" viewBox="0 0 900 650">
+  <rect width="900" height="650" rx="32" fill="#f2f8ff"/>
+  <rect x="80" y="90" width="740" height="470" rx="28" fill="#ffffff"/>
+  <rect x="140" y="150" width="300" height="220" rx="24" fill="#eaf5ff"/>
+  <circle cx="630" cy="250" r="120" fill="#dceeff"/>
+  <rect x="180" y="220" width="220" height="32" rx="16" fill="#1f67c4"/>
+  <rect x="180" y="270" width="140" height="24" rx="12" fill="#7eb8f7"/>
+  <path d="M470 350c40-90 160-120 250-70" stroke="#1f67c4" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M500 430c48-30 100-34 150-12" stroke="#7eb8f7" stroke-width="12" fill="none" stroke-linecap="round"/>
+  <circle cx="630" cy="250" r="70" fill="#ffffff" opacity="0.85"/>
+  <text x="140" y="500" font-family="Segoe UI, sans-serif" font-size="34" font-weight="700" fill="#1f67c4">정밀한 교정치료</text>
+  <text x="140" y="540" font-family="Segoe UI, sans-serif" font-size="20" fill="#4f6b86">맞춤형 진단과 디자인으로 자연스러운 미소를 완성합니다.</text>
+</svg>

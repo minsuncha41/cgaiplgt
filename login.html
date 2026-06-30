@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>스마일 치과 - 로그인 / 회원가입</title>
+    <link rel="stylesheet" href="login.css" />
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="logo">
+                        <span class="logo-text">SmileDental</span>
+                    </a>
+                    <a href="index.html" class="btn btn-secondary">병원 홈으로</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="auth-page">
+        <section class="auth-card" aria-labelledby="authTitle">
+            <p class="eyebrow">온라인 예약 시스템</p>
+            <h1 id="authTitle">예약 및 로그인</h1>
+            <p>회원 로그인, 회원가입, 관리자 로그인을 이용해 예약 관리 페이지로 이동할 수 있습니다.</p>
+
+            <div class="tab-list" role="tablist" aria-label="인증 방식 선택">
+                <button class="tab-btn active" type="button" data-tab="login">회원 로그인</button>
+                <button class="tab-btn" type="button" data-tab="signup">회원가입</button>
+                <button class="tab-btn" type="button" data-tab="admin">관리자</button>
+            </div>
+
+            <div class="tab-pane active" id="login-tab" role="tabpanel">
+                <form id="userLoginForm" novalidate>
+                    <div class="form-group">
+                        <label for="userId">아이디</label>
+                        <input id="userId" name="id" type="text" placeholder="아이디를 입력해주세요" autocomplete="username"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="userPassword">비밀번호</label>
+                        <input id="userPassword" name="password" type="password" placeholder="비밀번호를 입력해주세요"
+                            autocomplete="current-password" required />
+                    </div>
+                    <p class="error-message" id="userIdError"></p>
+                    <p class="error-message" id="userPasswordError"></p>
+                    <button type="submit" class="btn btn-primary btn-submit">로그인</button>
+                </form>
+            </div>
+
+            <div class="tab-pane" id="signup-tab" role="tabpanel">
+                <form id="userSignupForm" novalidate>
+                    <div class="form-group">
+                        <label for="signupId">아이디</label>
+                        <input id="signupId" name="id" type="text" placeholder="사용할 아이디를 입력해주세요" autocomplete="username"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">비밀번호</label>
+                        <input id="signupPassword" name="password" type="password" placeholder="사용할 비밀번호를 입력해주세요"
+                            autocomplete="new-password" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="signupName">이름</label>
+                        <input id="signupName" name="name" type="text" placeholder="성함을 입력해주세요" autocomplete="name"
+                            required />
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPhone">전화번호</label>
+                        <input id="signupPhone" name="phone" type="tel" placeholder="예: 010-1234-5678"
+                            autocomplete="tel" required />
+                    </div>
+                    <p class="error-message" id="signupIdError"></p>
+                    <p class="error-message" id="signupPasswordError"></p>
+                    <p class="error-message" id="signupNameError"></p>
+                    <p class="error-message" id="signupPhoneError"></p>
+                    <button type="submit" class="btn btn-primary btn-submit">회원가입 완료</button>
+                </form>
+            </div>
+
+            <div class="tab-pane" id="admin-tab" role="tabpanel">
+                <form id="adminLoginForm" novalidate>
+                    <div class="form-group">
+                        <label for="adminId">관리자 ID</label>
+                        <input id="adminId" name="id" type="text" placeholder="123" autocomplete="username" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword">관리자 비밀번호</label>
+                        <input id="adminPassword" name="password" type="password" placeholder="123"
+                            autocomplete="current-password" required />
+                    </div>
+                    <p class="error-message" id="adminIdError"></p>
+                    <p class="error-message" id="adminPasswordError"></p>
+                    <button type="submit" class="btn btn-primary btn-submit">관리자 로그인</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script type="module">
+        import { initializeApp, getApps, getApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+        import LoginManager from "./login.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDQFV9eMowcbYSTeLwgFGZ7FcJDhh8w6Lc",
+            authDomain: "cgplg-8d6ca.firebaseapp.com",
+            projectId: "cgplg-8d6ca",
+            storageBucket: "cgplg-8d6ca.firebasestorage.app",
+            messagingSenderId: "442690451946",
+            appId: "1:442690451946:web:cd232982478ad50c811a93",
+        };
+
+        const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            window.loginManager = new LoginManager();
+        });
+    </script>
+</body>
+
+</html>

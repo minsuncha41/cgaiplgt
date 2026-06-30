@@ -312,26 +312,21 @@ a {
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
     padding: 4rem 2rem;
     position: relative;
     overflow: hidden;
+    background-image: url(/imgs/mainVisual-44.jpg) !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
 }
 
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, var(--primary-light) 0%, rgba(77, 148, 255, 0.1) 100%);
-    z-index: -1;
-}
+
 
 .hero-content {
+    position: absolute;
     text-align: center;
-    max-width: 700px;
     z-index: 1;
 }
 

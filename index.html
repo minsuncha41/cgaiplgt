@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>스마일 치과 - 당신의 건강한 치아 파트너</title>
-    <link rel="stylesheet" href="/css/index.css" !important />
+    <link rel="stylesheet" href="./css/index.css" />
     <style>
         /* 기본 스타일 (index.css가 없을 때 안전망) */
         :root {
@@ -461,7 +461,7 @@
                     </div>
 
                     <div class="about-image" style="flex:1;min-width:260px;">
-                        <img src="/imgs/list0202.JPG" alt="현대식 치과 시설" class="clinic-image" loading="lazy">
+                        <img src="./imgs/list0202.JPG" alt="현대식 치과 시설" class="clinic-image" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -477,7 +477,7 @@
                 <div class="services-grid">
                     <a href="orthodontics.html" class="service-link">
                         <div class="service-card" data-service="orthodontics">
-                            <img src="/imgs//info3.JPG" alt="교정치료" class="service-image" loading="lazy">
+                            <img src="./imgs//info3.JPG" alt="교정치료" class="service-image" loading="lazy">
                             <div class="service-icon">🦷</div>
                             <h3>교정치료</h3>
                             <p>아름다운 치아 배열을 위한 전문적인 교정 치료</p>
@@ -487,7 +487,7 @@
 
                     <a href="prosthetics.html" class="service-link">
                         <div class="service-card" data-service="prosthetics">
-                            <img src="/imgs//info2.JPG" alt="심미보철" class="service-image" loading="lazy">
+                            <img src="./imgs//info2.JPG" alt="심미보철" class="service-image" loading="lazy">
                             <div class="service-icon">✨</div>
                             <h3>심미보철</h3>
                             <p>자연스럽고 아름다운 보철 치료로 자신감 회복</p>
@@ -497,7 +497,7 @@
 
                     <a href="periodontal.html" class="service-link">
                         <div class="service-card" data-service="periodontal">
-                            <img src="/imgs/img-equip02.jpg" alt="치주질환" class="service-image" loading="lazy">
+                            <img src="./imgs/img-equip02.jpg" alt="치주질환" class="service-image" loading="lazy">
 
                             <div class="service-icon">🔬</div>
                             <h3>치주질환</h3>
@@ -508,7 +508,7 @@
 
                     <a href="wisdom-tooth.html" class="service-link">
                         <div class="service-card" data-service="wisdom-tooth">
-                            <img src="/imgs/list0101.JPG" alt="사랑니" class="service-image" loading="lazy">
+                            <img src="./imgs/list0101.JPG" alt="사랑니" class="service-image" loading="lazy">
                             <div class="service-icon">⚡</div>
                             <h3>사랑니</h3>
                             <p>안전하고 편안한 사랑니 발치 서비스</p>
@@ -691,7 +691,7 @@
                     const card = document.createElement("article");
                     card.className = "notice-card";
                     card.innerHTML = `
-                        <img src="${"/imgs/clok.PNG" || "/imgs/clok.PNG"}" alt="${escapeHtml("/imgs/clok.PNG" || "공지 이미지")}" loading="lazy">
+                        <img src="${"./imgs/clok.PNG" || "./imgs/clok.PNG"}" alt="${escapeHtml("./imgs/clok.PNG" || "공지 이미지")}" loading="lazy">
                         <div>
                             <strong class="notice-title">${escapeHtml(item.title || "공지")}</strong>
                             <div class="notice-meta">${escapeHtml(item.category || "공지")} · ${escapeHtml(item.date || "")}</div>

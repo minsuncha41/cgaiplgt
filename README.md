@@ -1,3 +1,5 @@
+미리보기 링크:  https://minsuncha41.github.io/cgaiplgt/
+
 # 치과 웹사이트 로그인 + 예약 관리 시스템 (Firebase 기반 통합 구조)
 
 ## 1. 프로젝트 개요

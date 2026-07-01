@@ -149,11 +149,17 @@
         }
 
         .hero {
+            position: relative;
+            min-height: 88vh;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 24px;
-            background: linear-gradient(180deg, #f7fbff 0%, #fff 100%);
+            justify-content: flex-start;
+            padding: 4rem 2rem;
+            background-color: #eaf4ff;
+            background-image: url("./imgs/mainVisual-44.jpg") !important;
+            background-size: cover !important;
+            background-repeat: no-repeat;
+            background-position: center !important;
         }
 
         .hero-title {
@@ -690,8 +696,9 @@
                 items.forEach((item) => {
                     const card = document.createElement("article");
                     card.className = "notice-card";
+                    const noticeImage = "./imgs/clock.jpg";
                     card.innerHTML = `
-                        <img src="${"./imgs/clok.PNG" || "./imgs/clok.PNG"}" alt="${escapeHtml("./imgs/clok.PNG" || "공지 이미지")}" loading="lazy">
+                        <img src="${noticeImage}" alt="${escapeHtml(item.title || "공지 이미지")}" loading="lazy" onerror="this.onerror=null; this.src='./imgs/image.jpg';">
                         <div>
                             <strong class="notice-title">${escapeHtml(item.title || "공지")}</strong>
                             <div class="notice-meta">${escapeHtml(item.category || "공지")} · ${escapeHtml(item.date || "")}</div>
